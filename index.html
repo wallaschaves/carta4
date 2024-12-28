@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversario!!!</title>
+    <style>
+        @keyframes shootingStar {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-300px, 300px);
+                opacity: 0;
+            }
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', serif;
+            background: radial-gradient(circle, #2d003e, #0a001a);
+            overflow-y: scroll;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .card {
+            background-color: #6a0dad;
+            color: #fff;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .card h1 {
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 1.2em;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .photo-grid img {
+            width: 60%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            margin: 0 auto;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-style: italic;
+            font-size: 1.5em;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 0 8px white;
+            animation: shootingStar 2s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1></h1>
+        <p>
+            Feliz aniversário Yasmim, muitos anos de vida e felicidades e que Deus te abençoe sempre.❤️
+            
+        </p>
+        <p>"Agr eu vou deixar algumas palavras para você  tá"</p>
+        <p>
+            Então Yasmim desde tempo que agente vem conversando e se conhecendo melhor, e eu comecei a ter um sentimento por vc sabe e estou gostando de você.
+            Naquele sábado que agente dançou e brincou de guerra de chantilly foi muito engraçado eu já mais esquecerei desse dia kkk, e também depois daquele momento foi que agente começou a conversa na festa e essa noite foi literalmente incrível, e o mais interessante foi que agente já se viu várias vezes nas outras festas anteriores e nunca nos falamos né mas a vida é assim mesmo kkkk.
+            Te admiro muito sabia, e espero ter você sempre presente na minha vida,e que essa nossa conexão nunca se acabe, curto você pra caramba..
+            </p>
+            <p>Deixei algumas imagens em algo que nós gostamos em comum</p>
+
+
+        <div class="photo-grid">
+            <img src="4b2b7132-d675-416d-a55f-231c7cf5ccf3.jpeg" alt="Foto 1">
+            <img src="49b30eb6-4fa4-44b3-8caa-b766a9eb7d35.jpeg" alt="Foto 2">
+            <img src="photo_5150385736548199756_y.jpg" alt="Foto 3">
+            <img src="photo_5150385736548199757_y.jpg" alt="Foto 4">
+        </div>
+    </div>
+
+    <script>
+        // Personalização dinâmica
+        document.querySelector('h1').textContent = '';
+
+        // Criar estrelas cadentes
+        function createStar() {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.top = `${Math.random() * window.innerHeight}px`;
+            star.style.left = `${Math.random() * window.innerWidth}px`;
+            star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            document.body.appendChild(star);
+
+            setTimeout(() => {
+                star.remove();
+            }, 2000);
+        }
+
+        setInterval(createStar, 300);
+    </script>
+</body>
+</html>
